@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package api;
+
+service Chat{
+    rpc Subscribe(stream Message) returns (stream Message);
+}
+
+message Message {
+    string From = 1;
+    string To = 2;
+    bytes Body = 3;
+}
